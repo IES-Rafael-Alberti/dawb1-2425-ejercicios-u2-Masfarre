@@ -1,14 +1,15 @@
-def test_password(correct_password: str) -> bool:
-    password = input("Introduce la contraseña: ")
-    if correct_password == password:
+def test_password(password: str) -> bool:
+    if password == "password":
         return True
     else:
         return False
+def ask_pasword() -> str:
+    password = input("Introduce tu contraseña: ")
+    return password
 
 def main():
-    correct_password = "pasword123"
-    
-    if test_password == True:
+    password = ask_pasword().lower().strip()
+    if test_password(password) == True:
         print("Contrasñea correcta")
     else:
         print("Contraseña incorrecta")
